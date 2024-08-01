@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Dialog, Box, TextField, Button, Grid, IconButton } from '@mui/material';
-import adBannersData from "../../../data/addBanner.json"; 
+import adBannersData from "../../data/addBanner.json"; 
 import BannerImageComp from './BannerImageComp'; // Import the BannerImageComp
 import CloseIcon from '@mui/icons-material/Close';
 

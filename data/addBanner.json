@@ -1,0 +1,73 @@
+[
+    {
+      "title": "Summer Sale",
+      "description": "Get 50% off on all summer items!",
+      "cta": "Shop Now",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/5/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/1/square.png"
+    },
+    {
+      "title": "New Arrivals",
+      "description": "Check out the latest trends in fashion.",
+      "cta": "Explore",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/9/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/15/square.png"
+    },
+    {
+      "title": "Free Shipping",
+      "description": "Get free shipping on orders over $50!",
+      "cta": "Grab Offer",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/1/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/5/square.png"
+    },
+    {
+      "title": "Limited Time Offer",
+      "description": "Hurry! Only a few items left in stock.",
+      "cta": "Buy Now",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/15/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/9/square.png"
+    },
+    {
+      "title": "Weekend Deals",
+      "description": "Amazing discounts this weekend only!",
+      "cta": "View Deals",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/5/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/1/square.png"
+    },
+    {
+      "title": "Exclusive Offer",
+      "description": "Join our newsletter and get 20% off your first order.",
+      "cta": "Sign Up",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/9/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/15/square.png"
+    },
+    {
+      "title": "Clearance Sale",
+      "description": "Everything must go! Prices slashed.",
+      "cta": "Shop Clearance",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/1/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/5/square.png"
+    },
+    {
+      "title": "Holiday Specials",
+      "description": "Celebrate the holidays with our special offers.",
+      "cta": "Discover Now",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/15/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/9/square.png"
+    },
+    {
+      "title": "Last Chance",
+      "description": "Final call for our summer collection!",
+      "cta": "Last Chance",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/5/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/1/square.png"
+    },
+    {
+      "title": "Refer a Friend",
+      "description": "Refer a friend and both get $10 off!",
+      "cta": "Refer Now",
+      "image": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/9/square.png",
+      "background": "https://bannerbot-public.s3.ap-south-1.amazonaws.com/templates/15/square.png"
+    }
+  ]
+  

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import BannerImageComp from './components/BannerImageComp';
 import EditBannerTemplateBs from './components/EditBannerTemplateBs';
-import adBannersData from '../../data/addBanner.json'; 
+import adBannersData from '../data/addBanner.json'; 
 
 interface Banner {
     title: string;
