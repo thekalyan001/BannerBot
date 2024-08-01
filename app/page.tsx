@@ -1,95 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React, { useState } from 'react';
+import BannerImageComp from './components/BannerImageComp';
+import EditBannerTemplateBs from './components/EditBannerTemplateBs';
+import adBannersData from '../../data/addBanner.json'; 
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+interface Banner {
+    title: string;
+    description: string;
+    cta: string;
+    image: string;
+    background: string;
 }
+
+const HomePage = () => {
+    const [banners, setBanners] = useState(adBannersData); // State for banners
+    const [editOpen, setEditOpen] = useState(false); // State for edit modal
+    const [currentBanner, setCurrentBanner] = useState<Banner | null>(null); // Current banner to edit
+
+    // Function to open the edit modal
+    const handleEditClick = (banner: any) => {
+        setCurrentBanner(banner);
+        setEditOpen(true);
+    };
+
+    //   save edited banner
+    const handleSave = (updatedData: any) => {
+        if (currentBanner) {
+            const updatedBanners = banners.map((banner: { title: any; }) =>
+                banner.title === currentBanner.title ? { ...banner, ...updatedData } : banner
+            );
+            setBanners(updatedBanners);
+        }
+    };
+
+    return (
+        <div>
+            <img src={"https://www.bannerbot.xyz/_next/image?url=%2Fimages%2Fbannerbot-logo.png&w=96&q=75"}
+                style={{
+                    position: 'absolute',
+                    left: '50%',
+                    top: '5%',
+                    transform: 'translate(-50%, -50%) scale(0.6)',
+                }} />
+            <h1 style={{ textAlign: 'center', marginTop: '5%', }}>Ad Banners</h1>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+
+                {banners.map((banner: any, index: number) => (
+                    <BannerImageComp
+                        key={index}
+                        title={banner.title}
+                        description={banner.description}
+                        cta={banner.cta}
+                        image={banner.image}
+                        background={banner.background}
+                        showEditIcon={true}
+                        onEdit={() => handleEditClick(banner)} 
+                    />
+                ))}
+
+            </div>
+
+            {currentBanner && (
+                <EditBannerTemplateBs
+                    open={editOpen}
+                    onClose={() => setEditOpen(false)}
+                    initialData={currentBanner}
+                    onSave={handleSave} 
+                />
+            )}
+        </div>
+    );
+};
+
+export default HomePage;
